@@ -1,23 +1,40 @@
+"use client"
 import React from 'react'
 import CTA from './utils/CTA'
 import Gradient from '../assets/Gradient.png';
 import Hero1 from '../assets/Hero1.png';
 import Hero2 from '../assets/Hero2.png';
 // import Hero3 from '../assets/Hero3.png';
-import BlackRing from '../assets/Black Rings.png'
+import BlackRing from '../assets/Black Rings.png';
+import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <div className='bg-white w-full'>
         <div className="max-w-screen-xl mx-auto flex ">
             <div className="flex-1 py-28 relative z-10">
                 <img src={Gradient.src} alt="" className="absolute left-4 -top-4 -z-10" />
-                <h1 className="text-6xl font-black clash-bold">
+                <motion.h1 
+                variants={{onScreen:{opacity:1,translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:-10}}} 
+                initial="offScreen" whileInView="onScreen" 
+                viewport={{once:true}} 
+                transition={{duration:1.5, type:"spring",}}
+                className="text-6xl font-black clash-bold">
                     Make The Best Financial Decision
-                </h1>
-                <p className='py-8'>
+                </motion.h1>
+                <motion.p 
+                variants={{onScreen:{opacity:1, translateX:0, transformOrigin:"left",}, offScreen:{opacity:0, translateX:-100,}}} 
+                initial="offScreen" whileInView="onScreen" 
+                viewport={{once:true}} 
+                transition={{duration:1.5, type:"spring",}}
+                className='py-8'>
                 Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.
-                </p>
-                <div className="flex z-10">
+                </motion.p>
+                <motion.div 
+                variants={{onScreen:{opacity:1, translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:-10,}}} 
+                initial="offScreen" whileInView="onScreen" 
+                viewport={{once:true}} 
+                transition={{duration:1.5, type:"spring",}}
+                className="flex z-10">
                     <CTA text = "Get Started"/>
                     <button className='ml-8 px-4 flex gap-4 items-center'>
                         <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,8 +43,13 @@ const Hero = () => {
                         </svg>
                         Watch Video
                     </button>
-                </div>
-                <svg width="569" height="427" viewBox="0 0 569 427" fill="none" xmlns="http://www.w3.org/2000/svg">
+                </motion.div>
+                <motion.svg 
+                variants={{onScreen:{opacity:1, translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:-100,}}} 
+                initial="offScreen" whileInView="onScreen" 
+                viewport={{once:true}} 
+                transition={{duration:1.5, type:"spring",}}
+                width="569" height="427" viewBox="0 0 569 427" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M313.141 245.982C313.151 241.571 316.729 238 321.141 238H561C565.418 238 569 241.582 569 246V300.99C569 305.412 565.412 308.995 560.99 308.99L321.008 308.685C316.586 308.679 313.008 305.088 313.018 300.667L313.141 245.982Z" fill="#FF5555"/>
                     <g filter="url(#filter0_f_101_98)">
                     <path d="M333.74 276.402L369.882 239.125L385.356 254.203L344.417 296.216L333.74 276.402Z" fill="black"/>
@@ -67,15 +89,39 @@ const Hero = () => {
                     <rect width="15.6845" height="15.6845" fill="white" transform="translate(98.5345 260.503) rotate(-28)"/>
                     </clipPath>
                     </defs>
-                </svg>
+                </motion.svg>
             </div>
             <div className="flex-1 flex items-center justify-center">
                 <div className="h-full w-full relative">
-                    <img className='-left-20 top-0 absolute z-40 w-[80%]' src={Hero1.src} alt="" srcset="" />
-                    <img className='left-10 top-8 absolute z-30' src={Hero2.src} alt="" srcset="" />
-                    <img className='left-40 top-16 absolute z-20 w-[80%] ' src={Hero1.src} alt="" srcset="" />
-                    <img className='rotate-180 absolute bottom-10 z-10' src={Gradient.src} alt="" />
-                    <img className='left-10 -top-10 absolute z-0' src={BlackRing.src} alt="" srcset="" />
+                    <motion.img 
+                    variants={{onScreen:{opacity:1, translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:20,}}} 
+                    initial="offScreen" whileInView="onScreen" 
+                    viewport={{once:true}} 
+                    transition={{duration:5.5, type:"spring",}}
+                    className='-left-20 top-0 absolute z-40 w-[80%]' 
+                    src={Hero1.src} 
+                    alt="" 
+                    srcset="" />
+                    <motion.img 
+                    variants={{onScreen:{opacity:1, translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:20,}}} 
+                    initial="offScreen" whileInView="onScreen" 
+                    viewport={{once:true}} 
+                    transition={{duration:3.5, type:"spring",}}
+                    className='left-10 top-8 absolute z-30' src={Hero2.src} alt="" srcset="" />
+                    <motion.img 
+                    variants={{onScreen:{opacity:1, translateY:0, transformOrigin:"top",}, offScreen:{opacity:0, translateY:20,}}} 
+                    initial="offScreen" whileInView="onScreen" 
+                    viewport={{once:true}} 
+                    transition={{duration:1.5, type:"spring",}}
+                    className='left-40 top-16 absolute z-20 w-[80%] ' src={Hero1.src} alt="" srcset="" />
+                    <motion.img 
+                    variants={{onScreen:{opacity:1, rotate:360,}, offScreen:{opacity:0,rotate:0}}} 
+                    initial="offScreen" whileInView="onScreen" 
+                    viewport={{once:true}} 
+                    transition={{duration:1.5, type:"spring",}}
+                    className='rotate-180 absolute bottom-10 z-10' src={Gradient.src} alt="" />
+                    <motion.img 
+                    className='left-10 -top-10 absolute z-0' src={BlackRing.src} alt="" srcset="" />
                 </div>
                 
             </div>
