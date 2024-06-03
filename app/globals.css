@@ -8,26 +8,47 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+body{
+  overflow-x:hidden;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+  font-family: 'Clash Display';
+  src: url('../public/fonts/ClashDisplayRegular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display Medium';
+  src: url('../public/fonts/ClashDisplaySemibold.otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display Bold';
+  src: url('../public/fonts/ClashDisplayBold.otf');
+  font-weight: medium;
+  font-style: normal;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .gradient-border {
+    position: relative;
+    border-top: 2px solid transparent;
+    border-image: linear-gradient(to right, #16161600, #696969, #16161600) 1;
   }
+}
+
+* {
+  font-family: 'Clash Display', sans-serif;
+}
+
+.clash-bold{
+  font-family: 'Clash Display Bold', sans-serif;
+}
+
+.clash-medium{
+  font-family: 'Clash Display Medium', sans-serif;
 }
